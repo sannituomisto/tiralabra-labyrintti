@@ -1,1 +1,1 @@
-# tiralabra-labyrintti
+# Tiralabra-labyrintti
