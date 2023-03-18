@@ -8,3 +8,5 @@ Opin tällä viikolla erityisesti JPS algoritmin toiminnasta, sillä en ole aika
 esimerkiksi en ole ihan varma miten osaan toteuttaa labyrintit sovellukseen.
 
 Seuraavaksi aloitan sovelluksen ydinalueen toteutuksen ja niihin liittyvän testauksen.
+
+Tällä viikolla käytin aikaa 6h.
