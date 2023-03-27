@@ -12,8 +12,8 @@ def labyrintin_mitat():
         print("min 10x10")
         print('\n')
         return False
-    if korkeus_ja_leveys > 60:
-        print("max 60x60")
+    if korkeus_ja_leveys > 100:
+        print("max 100x100")
         print('\n')
         return False
     print('\n')
