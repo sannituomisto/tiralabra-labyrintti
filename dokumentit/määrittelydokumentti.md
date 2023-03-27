@@ -1,23 +1,21 @@
 # Määrittelydokumentti
 
-## MÄÄRITTELYDOKUMENTTIIN TULOSSA MUUTOKSIA
-
 Ohjelmointikieli: Python (en hallitse vielä muita) \
 Opinto-ohjelma: tietojenkäsittelytieteen kandidaatti (TKT) \
 Kieli: suomi
 
-Tarkoituksena on tehdä sovellus, joka löytää lyhimmän reitin labyrintistä ulos. Labyrintin ratkaisemiseen käytetään Dijkstran sekä Jump Point Search (8 suuntaan kulku) algoritmia. Sovelluksessa vertaillaan näitä kahta reitinhakualgoritmia.
+Tarkoituksena on tehdä sovellus, joka vertailee kahta algoritmia labyrintin ratkaisemisessa. Labyrintin ratkaisemiseen käytetään DFS algoritmia sekä Dead end filling algoritmia. Sovelluksen tarkoituksena on vertailla kumpi näistä algoritmeista on tehokkaampi labyrintin ratkaisemiseen.
 
-Molemmissa Dijkstran ja JPS algoritmeissa käytetään tietorakenteina prioriteettijonoa. Prioriteettijono toteutetaan binäärikekona. Sovelluksessa tulen myös tarvitsemaan hajautustauluja (Pythonin sanakirja) ja listoja.
+Molemmissa algoritmeissaa käytetään tietorakenteena pinoa.
 
-Tässä sovelluksessa ratkaisen siis ongelmaa "Miten löydetään tehokkaasti lyhin reitti labyrintistä ulos?". Valitsin kyseiset algoritmit, koska JPS algoritmin pitäisi olla tehokkaampi kuin Dijkstran algoritmi, joten toivottavasti tämä ero näkyy myös sovelluksessa, kun verrataan algoritmeja. Toisaalta JPS:n tehokkuus ymmärtääkseni tulee paremmin esiin suuremmassa ruudukossa, jossa ei ole paljoa esteitä mutta on silti mielenkiintoista nähdä miten algoritmit eroavat tehokkuudeltaan tässä kyseisessä ongelmassa. Tietorakenteet valitsin pienen taustatutkimuksen jälkeen. Prioriteettijonon toteutukseen valitsin binäärikeon, koska se on usein käytetty tietorakenne prioriteettijonon toteutuksessa.
+Tässä sovelluksessa ratkaisen siis ongelmaa "Miten löydetään tehokkaasti nopein reitti ulos labyrintista?". Valitsin kyseiset algoritmit, koska Dead End Filling algoritmi ei ole aikaisemmin tullut vastaan ja on mielenkiintoista nähdä miten DFS toimii labyrinteissa. Toisaalta myös käytettäessä DFS labyrintin rakenteesta ei ole aiempaa tietoa mutta Dead End Filling käytetään, kun nähdään koko labyrintti. Uskon siis, että näiden algoritmien tehokkuuden vertailu voisi olla mielekästä.
 
-Käyttäjä antaa sovellukselle syötteenä haluamansa labyrintin koon, valitsee kumpaa algoritmia haluaa käyttää ja käynnistää reitinhaun. Labyrintistä etsitään siis lyhin reitti lähtösolmusta päätesolmuun ja käyttäjälle näytetään tämän reitin siirtymien määrä ja itse reitti ainakin labyrintin koordinaateilla mutta tarkoituksena olisi myös tehdä toiminto, jolla käyttäjä näkee reitin labyrintissa.
+Käyttäjä antaa sovellukselle syötteenä haluamansa labyrintin koon, jolloin sovellus luo labyrintin tekstigrafiikalla. Sen jälkeen käyttäjä voi aloittaa labyrintin ratkaisemisen kahdella eri algoritmilla ja tulokseksi käyttäjälle näytetään löydetty reitti labyrintissa, siirtymien määrä ja aika reitin löytämiseen.
 
-Prioriteettijonoa käyttämällä Dijkstran algoritmin aikavaatimus on O((|E|+|V|)log|V|), jossa E on kaarien määrä ja V on solmujen määrä. Tilavaatimus on O(|V|). En tässä vaiheessa osaa sanoa täysin varmasti JPS:n aika- ja tilavaatimuksista mutta ymmärtääkseni JPS:llä on periaatteessa sama aikavaatimus kuin Dijkstran algoritmilla mutta käytännössä sen pitäisi kuitenkin olla nopeampi. Tilavaatimus JPS:llä on ymmärtääkseni myös O(|V|).
+DFS algoritmin aikavaatimus on O(|V| + |E|), jossa E on kaarien määrä ja V on solmujen määrä. Dead end filling aikavaatimuksesta ei tässä vaiheessa
+ole tietoa. Tilavaatimus molemissa on O(|V|).
 
 ## Lähteet
-- [Wikipedia: A* search algorithm, luettu 18.3.2023](https://en.wikipedia.org/wiki/A*_search_algorithm)
-- [Jump Search Algorithm in Python, luettu 18.3.2023](https://blog.finxter.com/jump-search-algorithm-in-python-a-helpful-guide-with-video/)
-- [Wikipedia: Dijkstra's algorithm, luettu 18.3.2023](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-- [Polunetsintä ruudukkokartoilla, Tampereen yliopisto, luettu 18.3.2023](https://trepo.tuni.fi/bitstream/handle/10024/121424/PekkaOinas.pdf?sequence=2)
+- [Wikipedia: Maze-solving algorithm, luettu 27.3.2023](https://en.wikipedia.org/wiki/Maze-solving_algorithm)
+- [Solving mazes with Depth-First Search, luettu 18.3.2023](https://medium.com/swlh/solving-mazes-with-depth-first-search-e315771317ae)
+- [Wikipedia: Depth-first search, luettu 27.3.2023](https://en.wikipedia.org/wiki/Depth-first_search)
