@@ -1,6 +1,5 @@
 # Generoidaan labyrintti käyttäen satunnaistettua (randomized) Primin Algoritmia.
-# Koodi perustuu Orestis Zekain "Fun With Python #1: Maze Generator" artikkelissa esitellyyn labyrintin generointi esimerkkiin. 
-# Itse olen muuttanut rakennetta ja suomentanut koodia sekä muuttaanut visuaalisia yksityiskohtia.
+# Koodi perustuu Orestis Zekain "Fun With Python #1" esimerkkiin.
 
 import random
 
@@ -20,7 +19,7 @@ def ymparoivat_solut(labyrintti, random_seina):
 
 
 """Labyrintin generointi"""
-def generoidaan_labyrintti(leveys, korkeus):
+def labyrintin_luonti(leveys, korkeus):
     seina = '@'
     solu = '*'
     ei_kayty = 'u'
