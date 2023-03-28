@@ -1,4 +1,4 @@
-from labyrintin_luonti import labyrintin_luonti
+from labyrintin_hakeminen import labyrintin_haku
 import ui
 
 def main():
@@ -6,12 +6,12 @@ def main():
         """Aloitus"""
         ui.aloitus()
         """Labyrintin mittojen syöttö"""
-        korkeus_ja_leveys = ui.labyrintin_mitat()
-        if korkeus_ja_leveys == False:
+        labyrintin_nro = ui.labyrintin_nro()
+        if labyrintin_nro == False:
             continue
         """Labyrintin teko"""
-        labyrintti=labyrintin_luonti(korkeus_ja_leveys, korkeus_ja_leveys)
-        ui.labyrintti(labyrintti, korkeus_ja_leveys)
+        labyrintti=labyrintin_haku(labyrintin_nro)
+        ui.labyrintti(labyrintti)
 
 if __name__ == '__main__':
     main()
