@@ -11,7 +11,14 @@ def main():
             continue
         """Labyrintin teko"""
         labyrintti=labyrintin_haku(labyrintin_nro)
-        ui.labyrintti(labyrintti)
+        if labyrintin_nro <= 5:
+            koko=20
+        else:
+            koko=100
+        # 150x150 kokoiset labyrintit, jos tulevat sovellukseen
+        # else:
+        #     koko=150
+        ui.labyrintti(labyrintti,koko)
 
 if __name__ == '__main__':
     main()
