@@ -1,4 +1,5 @@
 # Tiralabra-labyrintti
+[![codecov](https://codecov.io/gh/sannituomisto/tiralabra-labyrintti/branch/main/graph/badge.svg?token=7V5900RYNR)](https://codecov.io/gh/sannituomisto/tiralabra-labyrintti)
 ## Dokumentit
 - [Määrittelydokumentti](https://github.com/sannituomisto/tiralabra-labyrintti/blob/main/dokumentit/määrittelydokumentti.md)
 
