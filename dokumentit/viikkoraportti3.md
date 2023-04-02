@@ -21,3 +21,5 @@ Kysymyksiä:
 - Minkälaisen tuloksen käyttäjän pitäisi saada algoritmin tehokkuudesta ja toimivuudesta (esim. aika, reitti, ratkaisu polun pituus)? Varmaan paras olisi se, että
 käyttäjä näkisi miten reitti muodostuu livenä mutta uskon että minulla menisi siihen liian kauan aikaa. 
 - Pitääkö käyttöliittymää testata?
+
+Tällä viikolla käytin aikaa 21h
