@@ -1,5 +1,12 @@
+"""Sovelluksen eri toimintojen esittämisestä vastaava moduuli.
+"""
+
+
 def nayta_toiminnot():
-    komennot = [("1", "Poistu sovelluksesta"), 
+    """Tulostaa sovelluksen eri toiminnot. Käyttäjä syöttää toiminnon numeron.
+    Eri toiminnoille on selitykset.
+    """
+    komennot = [("1", "Poistu sovelluksesta"),
                 ("2", "Tutki labyrintteja"),
                 ("3", "Ratkaise dead end filling algoritmilla"),
                 ("4", "Ratkaise Tremauxin algoritmilla"),

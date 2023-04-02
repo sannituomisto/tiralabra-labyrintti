@@ -1,0 +1,5 @@
+[MASTER]
+ignore=CVS,ui,tests
+
+[FORMAT]
+max-line-length=120

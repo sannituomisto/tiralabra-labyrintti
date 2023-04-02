@@ -1,3 +1,4 @@
+"""Sovelluksen käyttöliittymän toiminnasta vastaava moduuli."""
 import os
 from front_end.sovelluksen_toiminnot import nayta_toiminnot
 from front_end.nayta_labyrintti import labyrintin_teko
@@ -7,7 +8,12 @@ from front_end.vertaile import vertaile_algoritmeja
 
 
 class Sovellus:
+    """Luokka, joka vastaa sovelluksen toiminnasta
+    """
+
     def suorita(self):
+        """Käynnistää sovelluksen käyttöliittymän
+        """
         os.system("clear")
         print("LABYRINTTISOVELLUS")
         while True:
@@ -18,20 +24,22 @@ class Sovellus:
             if kayttajan_syote == '1':
                 os.system("clear")
                 break
-            elif kayttajan_syote == '2':
+            if kayttajan_syote == '2':
                 os.system("clear")
                 try:
                     labyrintin_teko()
                 except:
                     print('\r')
-                    print('Labyrinttia ei voitu näyttää. Annoithan labyrintin numeron 1-10?')
+                    print(
+                        'Labyrinttia ei voitu näyttää. Annoithan labyrintin numeron 1-10?')
             elif kayttajan_syote == "3":
                 os.system("clear")
                 try:
                     nayta_dead_end_filling()
                 except:
                     print('\r')
-                    print('Algoritmia ei voitu suorittaa. Annoithan labyrintin numeron 1-10?')
+                    print(
+                        'Algoritmia ei voitu suorittaa. Annoithan labyrintin numeron 1-10?')
             elif kayttajan_syote == "4":
                 os.system("clear")
                 nayta_tremaux()
