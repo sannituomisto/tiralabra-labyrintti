@@ -9,3 +9,5 @@ Pygame tuotti ihan laittoman paljon vaikeuksia tällä viikolla, vaikka käyttö
 
 Seuraavaksi täytyy saada käyttöliittymä jollain lailla taas käyttökelpoiseksi. Luultavasti muutan käyttöliittymän komentoriviltä pygameen koska 
 algoritmien toimintaa on mielekkäämpää seurata pygamella joten tätä ominaisuutta en halua poistaa vaan mielummin muutan käytöliittymää. Teen myös testit loppuun algoritmien osalta. En voinut aloittaa toteutusdokumenttia koska rehellisesti sanottuna toteutus on vähän vielä epäselvää itsellekkin.
+
+Tällä viikolla käytin aikaa 24h
