@@ -1,8 +1,7 @@
 """Labyrinttien visualisoinnista vastaava moduuli.
 """
-from colorama import init
-from colorama import Fore, Style
 from labyrintin_hakeminen import labyrintin_haku
+from ikkuna import pygame_ikkuna
 
 
 def labyrintin_teko():
@@ -10,14 +9,15 @@ def labyrintin_teko():
     """
     laby_nro = labyrintin_nro()
     labyrintti = labyrintin_haku(laby_nro)
-    koko = labyrintin_koko(laby_nro)
-    labyrintin_visualisointi(labyrintti, koko)
+    koko, ruudun_koko = labyrintin_koko(laby_nro)
+    labyrintin_visualisointi(labyrintti, koko, ruudun_koko, laby_nro)
+    pygame_ikkuna.ydin_funktio()
+    return True
 
 
 def labyrintin_nro():
     """Käyttäjä syöttää haluamansa labyrintin numeron."""
-    print('Labyrintit 1-5 ovat 20x20 ja 6-10 ovat 100x100')
-    labyrintin_numero = int(input("Syötä labyrintin numero (1-10): "))
+    labyrintin_numero = int(input("Syötä labyrintin numero (1-5): "))
     return labyrintin_numero
 
 
@@ -32,31 +32,25 @@ def labyrintin_koko(lab_nro):
     """
     if lab_nro <= 5:
         koko = 20
-    else:
-        koko = 100
-    return koko
+        ruudun_koko = 30
+    # Tähän tulee mahdollisesti vielä isompien labyrinttien koot.
+    return koko, ruudun_koko
 
 
-def labyrintin_visualisointi(labyrintti, koko):
-    """Tulostaa labyrintin.
-
-    Args:
-        labyrintti (lista): labyrintti
-        koko (int): labyrintin koko
-    """
-    print('\r')
-    init()
+def labyrintin_visualisointi(labyrintti, koko, ruudun_koko, laby_nro):
+    """Labyrintin visualisointi"""
+    pygame_ikkuna.ikkunan_alustus('LABYRINTTI '+str(laby_nro))
+    x = 0
+    y = 0
     for i in range(0, koko):
         for j in range(0, koko):
             if labyrintti[i][j] == '.':
-                print(Fore.GREEN + Style.BRIGHT +
-                      str(labyrintti[i][j]), end=" ")
-            elif labyrintti[i][j] == 'u':
-                print(Fore.RED + Style.BRIGHT + '.', end=" ")
-            elif labyrintti[i][j] == '#':
-                print(Fore.RED + Style.BRIGHT + '@', end=" ")
+                pygame_ikkuna.piirto(
+                    (255, 205, 178), (x, y, ruudun_koko, ruudun_koko))
             else:
-                print(Fore.CYAN + Style.BRIGHT +
-                      str(labyrintti[i][j]), end=" ")
-
-        print(Style.RESET_ALL)
+                pygame_ikkuna.piirto(
+                    (120, 150, 100), (x, y, ruudun_koko, ruudun_koko))
+            x = x+ruudun_koko
+        y = y+ruudun_koko
+        x = 0
+    pygame_ikkuna.ikkunan_paivitys()
