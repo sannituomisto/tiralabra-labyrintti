@@ -15,8 +15,9 @@ class Sovellus:
         """Käynnistää sovelluksen käyttöliittymän
         """
         os.system("clear")
-        print("LABYRINTTISOVELLUS")
         while True:
+            print('\r')
+            print("LABYRINTTISOVELLUS")
             print('\r')
             nayta_toiminnot()
             print('\r')
@@ -28,21 +29,31 @@ class Sovellus:
                 os.system("clear")
                 try:
                     labyrintin_teko()
+                    os.system("clear")
                 except:
                     print('\r')
                     print(
-                        'Labyrinttia ei voitu näyttää. Annoithan labyrintin numeron 1-10?')
+                        'Labyrinttia ei voitu näyttää. Syötithän labyrintin numeron 1-5?')
             elif kayttajan_syote == "3":
                 os.system("clear")
                 try:
+                    print(
+                        'Valitse labyrintti, jonka haluat ratkaista dead end filling- algoritmilla.')
                     nayta_dead_end_filling()
                 except:
                     print('\r')
                     print(
-                        'Algoritmia ei voitu suorittaa. Annoithan labyrintin numeron 1-10?')
+                        'Algoritmia ei voitu suorittaa. Syötithän labyrintin numeron 1-5?')
             elif kayttajan_syote == "4":
                 os.system("clear")
-                nayta_tremaux()
+                try:
+                    print(
+                        'Valitse labyrintti, jonka haluat ratkaista Tremauxin algoritmilla.')
+                    nayta_tremaux()
+                except:
+                    print('\r')
+                    print(
+                        'Algoritmia ei voitu suorittaa. Syötithän labyrintin numeron 1-5?')
             elif kayttajan_syote == "5":
                 os.system("clear")
                 vertaile_algoritmeja()
