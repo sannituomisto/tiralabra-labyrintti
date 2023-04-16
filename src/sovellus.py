@@ -19,6 +19,10 @@ class Sovellus:
             print('\r')
             print("LABYRINTTISOVELLUS")
             print('\r')
+            print("Käyttöliittymä keskeneräinen ja tällä hetkellä vain sellainen, että näen algoritmien toimivan oikein.")
+            print("Pygame ikkunaa ei saa tai voi sulkea ennen kuin algoritmi on päättynyt eikä terminaaliin saa kirjoittaa")
+            print("samalla kuin pygame ikkuna on auki.")
+            print('\r')
             nayta_toiminnot()
             print('\r')
             kayttajan_syote = input("")
@@ -29,7 +33,6 @@ class Sovellus:
                 os.system("clear")
                 try:
                     labyrintin_teko()
-                    os.system("clear")
                 except:
                     print('\r')
                     print(
