@@ -1,15 +1,16 @@
 [MASTER]
-ignore=CVS,ui,tests
+ignore=tests
 
 [FORMAT]
 max-line-length=130
+max-attributes=10
 
 [MESSAGES CONTROL]
 disable=
     no-member,
-    attribute-defined-outside-init,
-    bare-except,
-    too-few-public-methods,
-    too-many-arguments,
     invalid-name,
-    duplicate-code
+    duplicate-code,
+    too-many-nested-blocks,
+    consider-using-enumerate,
+    too-many-branches
+
