@@ -91,14 +91,6 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
-name = "invoke"
-version = "2.0.0"
-description = "Pythonic task execution"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[[package]]
 name = "isort"
 version = "5.12.0"
 description = "A Python utility / library to sort Python imports."
