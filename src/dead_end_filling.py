@@ -17,12 +17,18 @@ class DeadEndFilling:
         self.is_test = is_test
 
     def start_dead_end_filling(self):
-        """Kokoaa algoritmin vaiheen yhteen.
+        """Kokoaa algoritmin vaiheet yhteen.
+
+        Returns:
+            Boolean, list: Palauttaa True, jos algoritmia ei keskeytetty ja lopullisen labyrintin listassa,
+            johon on merkitty umpikujat. Tätä lopullista labyrinttiä listamuodossa ei tarvita muualla kuin
+            testeissä, sillä algoritmit visualisoidaan pygamella.
         """
         dead_ends = self.find_dead_ends()
         if dead_ends:
             self.fill_dead_ends(dead_ends)
-        return self.finished
+            return self.finished, self.labyrinth
+        return None, self.labyrinth
 
     def find_dead_ends(self):
         """Etsii lapyrintin umpikujat ja kutsuu Labyrinth luokan fuktiota, joka päivittää algotimin vaiheet

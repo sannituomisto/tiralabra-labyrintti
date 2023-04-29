@@ -27,7 +27,7 @@ class Tremaux:
         return self.finished
 
     def tremaux(self):
-        """Tremauxin algoritmista vastaava funktio. Pidetään muistissa vierailtuja blockja ja muodostuvaa ratkaisupolkua.
+        """Tremauxin algoritmista vastaava funktio. Pidetään muistissa vierailtuja ruutuja ja muodostuvaa ratkaisupolkua.
         Edetään polkuja pitkin kunnes tullaan risteykseen, jossa ei olla vierailtu, jolloin arvotaan uusi suunta. Merkitään 
         (eli piirretään) pygamesta vastaavan moduulin avulla ruudut, jossa ollaan vierailtu kerran yhdellä värillä samalla,
         kun edetään labyrintissa. Jos törmätään umpikujaan tai risteykseen, jossa on jo vierailtu, lähdetään peruutamaan
@@ -85,13 +85,12 @@ class Tremaux:
                 time.sleep(0.1)
                 stack.pop()
                 solved_path.pop()
-        return None
 
     def start_and_end_block(self):
-        """Etsii start- ja endruudun.
+        """Etsii aloitus- ja lopetusruudun.
 
         Returns:
-            tuple: start- ja endruudun koordinaatit.
+            tuple: aloitus- ja lopetusruudun koordinaatit.
         """
         start = None
         end = None
@@ -123,19 +122,3 @@ class Tremaux:
         if width < self.size - 1 and self.labyrinth[height][width+1] == ".":
             neighbour_blocks.append((height, width + 1))
         return neighbour_blocks
-
-    def handle_event(self, event):
-        """Käsittelee algoritminäkymän tapahtumat, kun tremauxin algoritmi on päässyt loppuun.
-        Args:
-            event (pygame event): Pygame tapahtuma
-        """
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                pygame.quit()
-                sys.exit()
-            elif event.key == pygame.K_m:
-                return True
-        return None
