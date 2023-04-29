@@ -6,6 +6,7 @@ from menu import Menu
 from labyrinth import Labyrinth
 from dead_end_filling import DeadEndFilling
 from tremaux import Tremaux
+import handle_event_algorithm_view
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 500
@@ -40,12 +41,13 @@ while True:
                     tremaux_alg = Tremaux(selected_labyrinth, labyrinth, 20)
                     state = "LABYRINTH"
             elif state == "WAIT":
-                back_to_menu = tremaux_alg.handle_event(event)
+                back_to_menu = handle_event_algorithm_view.handle_event(event)
                 if back_to_menu:
                     state = "MENU"
 
     if state == "LABYRINTH":
-        dead_end_filling_state = dead_end_filling_alg.start_dead_end_filling()
+        dead_end_filling_state = dead_end_filling_alg.start_dead_end_filling()[
+            0]
         if not dead_end_filling_state:
             state = "MENU"
             continue
