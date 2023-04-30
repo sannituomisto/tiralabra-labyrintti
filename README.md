@@ -10,3 +10,4 @@
 - [Viikkoraportti 3](https://github.com/sannituomisto/tiralabra-labyrintti/blob/main/dokumentit/viikkoraportti3.md)
 - [Viikkoraportti 4](https://github.com/sannituomisto/tiralabra-labyrintti/blob/main/dokumentit/viikkoraportti4.md)
 - [Viikkoraportti 5](https://github.com/sannituomisto/tiralabra-labyrintti/blob/main/dokumentit/viikkoraportti5.md)
+- [Viikkoraportti 6](https://github.com/sannituomisto/tiralabra-labyrintti/blob/main/dokumentit/viikkoraportti6.md)
