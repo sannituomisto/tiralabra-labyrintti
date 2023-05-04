@@ -3,7 +3,6 @@
     """
 import sys
 import time
-from collections import deque
 from random import randint
 import pygame
 
@@ -41,7 +40,7 @@ class Tremaux:
         """
         visited_blocks = set()
         solved_path = []
-        stack = deque()
+        stack = []
         start, end = self.start_and_end_block()
         stack.append(start)
 
@@ -84,7 +83,10 @@ class Tremaux:
                     "visited_twice", block[1], block[0])
                 time.sleep(0.1)
                 stack.pop()
-                solved_path.pop()
+                if solved_path:
+                    solved_path.pop()
+        self.finished = True
+        return solved_path
 
     def start_and_end_block(self):
         """Etsii aloitus- ja lopetusruudun.

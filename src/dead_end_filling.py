@@ -1,6 +1,5 @@
 """Dead end filling-algoritmin toiminnasta vastaava moduuli."""
 from collections import deque
-import time
 import sys
 import pygame
 
@@ -56,7 +55,7 @@ class DeadEndFilling:
                 if self.labyrinth[i][j] != "@" and neighbour_blocks.count("@") >= 3:
                     dead_ends.append((i, j))
                     self.labyrinth_class.update_labyrinth("deadend", j, i,)
-                    time.sleep(0.2)
+                    # time.sleep(0.2)
         return dead_ends
 
     def surrounding_blocks(self, height, width):
@@ -80,6 +79,18 @@ class DeadEndFilling:
             neighbour_blocks.append(self.labyrinth[height][width+1])
         return neighbour_blocks
 
+    def find_end_block(self):
+        """Etsii lopetus ruudun.
+
+        Returns:
+            tuple: lopetusruudun koordinaatit.
+        """
+        end = None
+        for j in range(0, self.size):
+            if self.labyrinth[self.size-1][j] == ".":
+                end = (self.size-1, j)
+        return end
+
     def fill_dead_ends(self, dead_ends):
         """Täyttää labyrintin polkuja umpikujista risteykseen asti kunnes vain ratkaisu on jäljellä
         ja kutsuu Labyrinth luokan fuktiota, joka päivittää algotimin vaiheet eli nyt umpikujista lähtevät polut labyrinttiin.
@@ -91,11 +102,12 @@ class DeadEndFilling:
         Returns:
             Labyrintin umpikujista risteykseen asti lähtevien polkujen koordinaatit listassa. Palautusarvo on testejä varten.
         """
-        stack = deque()
+        end_block = self.find_end_block()
+        queue = deque()
         dead_end_paths = []
         for dead_end in dead_ends:
-            stack.append(dead_end)
-            while len(stack) > 0:
+            queue.append(dead_end)
+            while len(queue) > 0:
                 if not self.is_test:
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
@@ -107,12 +119,14 @@ class DeadEndFilling:
                                 sys.exit()
                             elif event.key == pygame.K_m:
                                 return False
-                block = stack.popleft()
+                block = queue.popleft()
                 self.labyrinth[block[0]][block[1]] = '#'
                 dead_end_paths.append(block)
                 self.labyrinth_class.update_labyrinth(
                     "deadend_path", block[1], block[0])
-                time.sleep(0.1)
+                # time.sleep(0.1)
+                if block == end_block:
+                    break
                 for move in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
                     new_block = (block[0]+move[0], block[1]+move[1])
                     neighbour_blocks = self.surrounding_blocks(
@@ -120,6 +134,6 @@ class DeadEndFilling:
                     if neighbour_blocks.count(".") > 1:
                         continue
                     if self.labyrinth[new_block[0]][new_block[1]] == ".":
-                        stack.append(new_block)
+                        queue.append(new_block)
         self.finished = True
         return dead_end_paths
