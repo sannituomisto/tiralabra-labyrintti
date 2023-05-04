@@ -1,4 +1,4 @@
-"""Pygame ikkunan tapahtumia algoritmien lopetettua.
+"""Moduuli, joka vastaa pygame ikkunan tapahtumista algoritmien lopetettua.
     """
 import sys
 import pygame

@@ -33,12 +33,14 @@ while True:
             if state == "MENU":
                 selected_labyrinth_number = menu.handle_event(event)
                 if selected_labyrinth_number is not None:
-                    selected_labyrinth = labyrinth.get_labyrinth(
+                    selected_labyrinth1 = labyrinth.get_labyrinth(
+                        selected_labyrinth_number)
+                    selected_labyrinth2 = labyrinth.get_labyrinth(
                         selected_labyrinth_number)
                     labyrinth.draw_labyrinth()
                     dead_end_filling_alg = DeadEndFilling(
-                        selected_labyrinth, labyrinth, 20)
-                    tremaux_alg = Tremaux(selected_labyrinth, labyrinth, 20)
+                        selected_labyrinth1, labyrinth, 20)
+                    tremaux_alg = Tremaux(selected_labyrinth2, labyrinth, 20)
                     state = "LABYRINTH"
             elif state == "WAIT":
                 back_to_menu = handle_event_algorithm_view.handle_event(event)
