@@ -15,11 +15,25 @@ class TestTremaux(unittest.TestCase):
                           ['@', '.', '@', '@', '@', '@', '@', '@', '.', '@'],
                           ['@', '.', '.', '.', '.', '.', '.', '.', '.', '@'],
                           ['@', '@', '@', '@', '@', '@', '@', '@', '.', '@']]
+        
+        self.labyrinth2 = [['@', '.', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '.', '.', '.', '.', '.', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '.', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '.', '.', '@', '.', '@'],
+                           ['@', '.', '@', '@', '@', '@', '@', '@', '.', '@'],
+                           ['@', '.', '.', '.', '.', '.', '.', '@', '.', '@'],
+                           ['@', '@', '@', '@', '@', '@', '@', '@', '.', '@']]
+        
 
         self.size = 10
         self.pygame_mock = Mock()
         self.Tre = Tremaux(
             self.labyrinth, self.pygame_mock, self.size, is_test=True)
+        self.Tre2 = Tremaux(
+            self.labyrinth2, self.pygame_mock, self.size, is_test=True)
 
     def test_tremaux_find_one_solved_path(self):
         result_from_algorithm = self.Tre.tremaux()
@@ -34,6 +48,10 @@ class TestTremaux(unittest.TestCase):
         result = ((0, 1), (9, 8))
         self.assertEqual(result_from_algorithm, result)
 
-    def test_finished_is_true(self):
+    def test_returns_true(self):
         result_from_algorithm = self.Tre.start_tremaux()
         self.assertEqual(result_from_algorithm, True)
+
+    def test_if_not_solution(self):
+        result_from_algorithm = self.Tre2.tremaux()
+        self.assertEqual(len(result_from_algorithm), 0)

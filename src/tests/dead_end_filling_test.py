@@ -26,6 +26,17 @@ class TestDeadEndFilling(unittest.TestCase):
                            ['@', '.', '@', '@', '@', '@', '@', '@', '.', '@'],
                            ['@', '.', '.', '.', '.', '.', '.', '.', '.', '@'],
                            ['@', '@', '@', '@', '@', '@', '@', '@', '.', '@']]
+        
+        self.labyrinth3 = [['@', '.', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '.', '.', '.', '.', '.', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '.', '@', '@', '@', '@'],
+                           ['@', '.', '@', '@', '@', '.', '.', '@', '.', '@'],
+                           ['@', '.', '@', '@', '@', '@', '@', '@', '.', '@'],
+                           ['@', '.', '.', '.', '.', '.', '.', '@', '.', '@'],
+                           ['@', '@', '@', '@', '@', '@', '@', '@', '.', '@']]
 
         self.solved_labyrinth = [['@', '.', '@', '@', '@', '@', '@', '@', '@', '@'],
                                  ['@', '.', '@', '@', '#', '#', '#', '#', '#', '@'],
@@ -37,12 +48,26 @@ class TestDeadEndFilling(unittest.TestCase):
                                  ['@', '.', '@', '@', '@', '@', '@', '@', '.', '@'],
                                  ['@', '.', '.', '.', '.', '.', '.', '.', '.', '@'],
                                  ['@', '@', '@', '@', '@', '@', '@', '@', '.', '@']]
+        
+        self.solved_labyrinth3 = [['@', '#', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '#', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '#', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '#', '@', '@', '@', '@', '@', '@', '@', '@'],
+                           ['@', '#', '#', '#', '#', '#', '@', '@', '@', '@'],
+                           ['@', '#', '@', '@', '@', '#', '@', '@', '@', '@'],
+                           ['@', '#', '@', '@', '@', '#', '#', '@', '#', '@'],
+                           ['@', '#', '@', '@', '@', '@', '@', '@', '#', '@'],
+                           ['@', '#', '#', '#', '#', '#', '#', '@', '#', '@'],
+                           ['@', '@', '@', '@', '@', '@', '@', '@', '#', '@']]
+        
         self.size = 10
         self.pygame_mock = Mock()
         self.DeF = DeadEndFilling(
             self.labyrinth, self.pygame_mock, self.size, is_test=True)
         self.DeF2 = DeadEndFilling(
             self.labyrinth2, self.pygame_mock, self.size, is_test=True)
+        self.DeF3 = DeadEndFilling(
+            self.labyrinth3, self.pygame_mock, self.size, is_test=True)
 
     def test_find_dead_ends(self):
         dead_ends = self.DeF.find_dead_ends()
@@ -60,6 +85,14 @@ class TestDeadEndFilling(unittest.TestCase):
         result = self.DeF.start_dead_end_filling()
         self.assertEqual(result, (True, self.solved_labyrinth))
 
-    def test_if_no_dead_ends(self):
+    def test_do_not_find_dead_ends_if_not_dead_ends(self):
+        dead_ends = self.DeF2.find_dead_ends()
+        self.assertEqual(len(dead_ends), 0)
+
+    def test_labyrinth_do_not_change_if_no_dead_ends(self):
         result = self.DeF2.start_dead_end_filling()
         self.assertEqual(result, (None, self.labyrinth2))
+
+    def test_if_not_solution(self):
+        result = self.DeF3.start_dead_end_filling()
+        self.assertEqual(result, (True, self.solved_labyrinth3))
