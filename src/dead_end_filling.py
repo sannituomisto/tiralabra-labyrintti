@@ -1,6 +1,7 @@
 """Dead end filling-algoritmin toiminnasta vastaava moduuli."""
 from collections import deque
 import sys
+import time
 import pygame
 
 
@@ -55,7 +56,7 @@ class DeadEndFilling:
                 if self.labyrinth[i][j] != "@" and neighbour_blocks.count("@") >= 3:
                     dead_ends.append((i, j))
                     self.labyrinth_class.update_labyrinth("deadend", j, i,)
-                    # time.sleep(0.2)
+                    time.sleep(0.2)
         return dead_ends
 
     def surrounding_blocks(self, height, width):
@@ -124,7 +125,7 @@ class DeadEndFilling:
                 dead_end_paths.append(block)
                 self.labyrinth_class.update_labyrinth(
                     "deadend_path", block[1], block[0])
-                # time.sleep(0.1)
+                time.sleep(0.1)
                 if block == end_block:
                     break
                 for move in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
