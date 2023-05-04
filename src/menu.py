@@ -20,11 +20,11 @@ class Menu:
             screen (pygame display): Pygameikkuna
         """
         self.screen = screen
-        self.laby_font = pygame.font.SysFont(None, 48)
-        self.ins_font = pygame.font.SysFont(None, 28)
-        self.head_font = pygame.font.SysFont(None, 45)
+        self.laby_font = pygame.font.SysFont('Verdana', 30)
+        self.ins_font = pygame.font.SysFont('Verdana', 18)
+        self.head_font = pygame.font.SysFont('Verdana', 30)
         self.labyrinths = ["Labyrintti 1", "Labyrintti 2",
-                           "Labyrintti 3", "Labyrintti 4", "Labyrintti 5"]
+                           "Labyrintti 3", "Labyrintti 4", "Labyrintti 5", "Labyrintti 6"]
         self.selected_labyrinth = 0
 
     def draw(self):
@@ -32,12 +32,12 @@ class Menu:
         """
         self.screen.fill(WHITE)
         header = self.head_font.render(
-            "Dead End Filling ja Tremauxin algoritmi labyrintissa", True, SALMON)
+            "Dead-end filling ja Trémauxin algoritmit labyrintissa", True, SALMON)
         instructions = self.ins_font.render(
-            "Selaa labyrintteja nuolinäppäimillä ja valitse labyrintti painamalla enter.", True, ROSEBROWN)
+            "Selaa labyrintteja nuolinäppäimillä ja valitse labyrintti painamalla enter.", True, GREEN)
         header_rect = header.get_rect(
             center=(self.screen.get_width() // 2, 50))
-        instructions_rect = instructions.get_rect(topleft=(60, 80))
+        instructions_rect = instructions.get_rect(center=(self.screen.get_width() // 2, 95))
         self.screen.blit(header, header_rect)
         self.screen.blit(instructions, instructions_rect)
         for i in range(len(self.labyrinths)):

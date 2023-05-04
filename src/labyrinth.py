@@ -21,14 +21,14 @@ class Labyrinth:
         self.screen = screen
         self.screen_width = self.screen.get_width()
         self.screen_height = self.screen.get_height()
-        self.labyrinth = None
         self.screen_def = self.screen.subsurface(
             (0, 100, self.screen_width//2, self.screen_height-100))
         self.screen_tre = self.screen.subsurface(
             (self.screen_width//2, 100, self.screen_width//2, self.screen_height-100))
-        self.ins_font = pygame.font.SysFont(None, 28)
-        self.head_font = pygame.font.SysFont(None, 45)
+        self.ins_font = pygame.font.SysFont('Verdana', 18)
+        self.head_font = pygame.font.SysFont('Verdana', 30)
         self.block_size = 20
+        self.labyrinth=None
         self.labyrinth_size = 20
 
     def get_labyrinth(self, labyrinth_number):
@@ -47,13 +47,13 @@ class Labyrinth:
         labyrintit.
         """
         self.screen.fill(WHITE)
-        header = self.head_font.render("Dead End Filling", True, SALMON)
-        header2 = self.head_font.render("Tremaux", True, SALMON)
+        header = self.head_font.render("Dead-end filling", True, SALMON)
+        header2 = self.head_font.render("Trémaux", True, SALMON)
         instructions = self.ins_font.render(
-            "Palaa valikkoon painamalla m-näppäintä.", True, ROSEBROWN)
+            "Palaa valikkoon painamalla m-näppäintä.", True, GREEN)
         header_rect = header.get_rect(topleft=(90, 50))
         header2_rect = header2.get_rect(topleft=(530, 50))
-        instructions_rect = instructions.get_rect(topleft=(0, 10))
+        instructions_rect = instructions.get_rect(topleft=(5, 10))
         self.screen.blit(header, header_rect)
         self.screen.blit(header2, header2_rect)
         self.screen.blit(instructions, instructions_rect)
