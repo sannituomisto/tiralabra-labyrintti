@@ -1,4 +1,3 @@
-from collections import deque
 import sys
 import time
 import pygame
@@ -103,11 +102,11 @@ class DeadEndFilling:
             Labyrintin umpikujista risteykseen asti lähtevien polkujen koordinaatit listassa. Palautusarvo on testejä varten.
         """
         end_block = self.find_end_block()
-        queue = deque()
+        stack = []
         dead_end_paths = []
         for dead_end in dead_ends:
-            queue.append(dead_end)
-            while len(queue) > 0:
+            stack.append(dead_end)
+            while stack:
                 if not self.is_test:
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
@@ -119,7 +118,7 @@ class DeadEndFilling:
                                 sys.exit()
                             elif event.key == pygame.K_m:
                                 return False
-                block = queue.popleft()
+                block = stack.pop()
                 self.labyrinth[block[0]][block[1]] = '#'
                 dead_end_paths.append(block)
                 self.labyrinth_class.update_labyrinth(
@@ -134,6 +133,6 @@ class DeadEndFilling:
                     if neighbour_blocks.count(".") > 1:
                         continue
                     if self.labyrinth[new_block[0]][new_block[1]] == ".":
-                        queue.append(new_block)
+                        stack.append(new_block)
         self.finished = True
         return dead_end_paths
