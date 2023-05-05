@@ -22,8 +22,8 @@ class Tremaux:
         samaa polkua pitkin takaisin ja merkitään (eli piirretään) nämä kahdesti vieraillut ruudut peruutettaessa uudella värillä
         pygamesta vastaavan moduulin avulla. Jos saavutaan risteykseen, jossa ollaan jo vierailtu mutta polku, jota pitkin
         saavuttiin risteykseen on jo merkitty kahdesti, täytyy valita risteyksestä uusi reitti, jossa on vierailtu maximissaan
-        kerran mutta valitaan vierailematon polku, jos mahdollista. Funktiossa on myös pygame ikkunan tapahtumien käsittelyyn tarvittavaa
-        koodia, joka ei liity algoritmin toimintaan.
+        kerran mutta valitaan vierailematon polku, jos mahdollista. Funktiossa on myös pygame ikkunan tapahtumien käsittelyyn
+        tarvittavaa koodia, joka ei liity algoritmin toimintaan.
 
         Returns:
             Ratkaisupolun kooridaatit listassa. Palautusarvo on testejä varten.
