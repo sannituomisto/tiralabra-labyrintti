@@ -29,3 +29,6 @@ Projektin koodikattavuutta voi myös tarkastella Codecovin avulla painamalla dok
 ![Screenshot from 2023-05-05 16-32-57](https://user-images.githubusercontent.com/101722915/236471872-27a4bd29-5a63-4aa5-bfad-795199339258.png)
 
 ***Huom!*** Dead-end filling ja Tremauxin algoritmin koodissa on pygame ikkunan tapahtumien käsittelyyn tarvittavaa koodia, joka ei liity algoritmin toimintaan. Tätä osaa koodista ei testata ja tämä alentaa haaraumakattavuutta.
+
+### Pylint ja koodin laatu
+Koodin laadun tarkistus voidaan tehdä suorittamalla komento `poetry run pylint src`.
