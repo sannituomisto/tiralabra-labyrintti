@@ -53,7 +53,7 @@ while True:
         if not dead_end_filling_state:
             state = "MENU"
             continue
-        tremaux_state = tremaux_alg.start_tremaux()
+        tremaux_state = tremaux_alg.tremaux()[0]
         if not tremaux_state:
             state = "MENU"
             continue

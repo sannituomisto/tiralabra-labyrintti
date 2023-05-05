@@ -12,15 +12,7 @@ class Tremaux:
         self.labyrinth = labyrinth
         self.labyrinth_class = labyrinth_class
         self.size = size
-        self.finished = False
         self.is_test = is_test
-
-    def start_tremaux(self):
-        """Aloittaa visualisoinnin pygamesta vastaavan moduulin avulla, jonka jälkeen kokoaa algoritmin vaiheet yhteen
-        ja lopuksi mahdollistaa visualisoinnin lopettamisen pygamesta vastaavan moduulin avulla.
-        """
-        self.tremaux()
-        return self.finished
 
     def tremaux(self):
         """Tremauxin algoritmista vastaava funktio. Pidetään muistissa vierailtuja ruutuja ja muodostuvaa ratkaisupolkua.
@@ -30,7 +22,8 @@ class Tremaux:
         samaa polkua pitkin takaisin ja merkitään (eli piirretään) nämä kahdesti vieraillut ruudut peruutettaessa uudella värillä
         pygamesta vastaavan moduulin avulla. Jos saavutaan risteykseen, jossa ollaan jo vierailtu mutta polku, jota pitkin
         saavuttiin risteykseen on jo merkitty kahdesti, täytyy valita risteyksestä uusi reitti, jossa on vierailtu maximissaan
-        kerran mutta valitaan vierailematon polku, jos mahdollista.   
+        kerran mutta valitaan vierailematon polku, jos mahdollista. Funktiossa on myös pygame ikkunan tapahtumien käsittelyyn tarvittavaa
+        koodia, joka ei liity algoritmin toimintaan.
 
         Returns:
             Ratkaisupolun kooridaatit listassa. Palautusarvo on testejä varten.
@@ -59,8 +52,7 @@ class Tremaux:
             time.sleep(0.1)
             unvisited_blocks = []
             if block == end:
-                self.finished = True
-                return solved_path
+                return True, solved_path
 
             if block not in visited_blocks:
                 visited_blocks.add(block)
@@ -82,8 +74,7 @@ class Tremaux:
                 stack.pop()
                 if solved_path:
                     solved_path.pop()
-        self.finished = True
-        return solved_path
+        return True, solved_path
 
     def start_and_end_block(self):
         """Etsii aloitus- ja lopetusruudun.

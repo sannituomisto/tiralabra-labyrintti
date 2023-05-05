@@ -36,7 +36,7 @@ class TestTremaux(unittest.TestCase):
             self.labyrinth2, self.pygame_mock, self.size, is_test=True)
 
     def test_tremaux_find_one_solved_path(self):
-        result_from_algorithm = self.Tre.tremaux()
+        result_from_algorithm = self.Tre.tremaux()[1]
         result1 = [(0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1),
                    (8, 1), (8, 2), (8, 3), (8, 4), (8, 5), (8, 6), (8, 7), (8, 8)]
         result2 = [(0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (4, 2), (4, 3), (4, 4),
@@ -48,10 +48,6 @@ class TestTremaux(unittest.TestCase):
         result = ((0, 1), (9, 8))
         self.assertEqual(result_from_algorithm, result)
 
-    def test_returns_true(self):
-        result_from_algorithm = self.Tre.start_tremaux()
-        self.assertEqual(result_from_algorithm, True)
-
     def test_if_not_solution(self):
-        result_from_algorithm = self.Tre2.tremaux()
+        result_from_algorithm = self.Tre2.tremaux()[1]
         self.assertEqual(len(result_from_algorithm), 0)
