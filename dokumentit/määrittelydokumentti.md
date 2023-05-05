@@ -5,7 +5,7 @@ Opinto-ohjelma: tietojenkäsittelytieteen kandidaatti (TKT) \
 Kieli: suomi
 
 ### Sovelluksen tarkoitus
-Tässä sovelluksessa ratkaisen ongelmaa "Miten löydetään reitti ulos labyrintista?". Tarkoituksena on tehdä sovellus, joka vertailee Dead-end filling- ja Tremauxin algoritmia labyrintin ratkaisemisessa. Vertailun kohteena on siis algoritmien erilaiset toimintaperiaatteet labyrintin ratkaisemisessa. Molemmissa algoritmeissaa käytetään tietorakenteena pinoa.
+Tässä sovelluksessa ratkaisen ongelmaa "Miten löydetään reitti ulos labyrintista?". Tarkoituksena on tehdä sovellus, joka vertailee Dead-end filling- ja Tremauxin algoritmia labyrintin ratkaisemisessa. Vertailun kohteena on siis algoritmien erilaiset toimintaperiaatteet labyrintin ratkaisemisessa. Molemmissa algoritmeissaa käytetään tietorakenteena pinoa, joka toteutetaan listarakenteen avulla.
 
 ### Miksi kyseiset algoritmit?
 Valitsin kyseiset algoritmit, koska kumpikaan algoritmi ei ole aikaisemmin tullut vastaan ja ne vaikuttivat mielenkiintoisilta ja keskenään tarpeeksi erilaisilta, jotta vertailu on mielekästä. Käytettäessä Tremauxin algoritmia labyrintin rakenteesta ei ole aiempaa tietoa mutta Dead End Filling algoritmia taas käytetään, kun oletetaan, että nähdään koko labyrintti joten tässäkin asiassa algoritmeilla on jo eroa.
