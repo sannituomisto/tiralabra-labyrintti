@@ -1,4 +1,3 @@
-"""Dead end filling-algoritmin toiminnasta vastaava moduuli."""
 from collections import deque
 import sys
 import time

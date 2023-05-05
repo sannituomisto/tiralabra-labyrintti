@@ -1,4 +1,4 @@
-"""Pygame ikkunan mainloop, joka hallinnoi koko ohjelmaa.
+"""Pygame ikkunan mainloop, joka hallinnoi koko ohjelman toimintaa ja näkymien vaihtamista.
     """
 import sys
 import pygame

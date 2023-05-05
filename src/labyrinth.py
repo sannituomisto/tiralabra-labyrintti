@@ -1,5 +1,3 @@
-"""Algoritmien visualisointinäkymästä vastaava moduuli.
-    """
 import pygame
 
 WHITE = (255, 255, 255)
@@ -10,7 +8,7 @@ RED = (139, 0, 0)
 
 
 class Labyrinth:
-    """Labyrintin hakemisesta, piirtämisestä ja päivittämisestä vastaava luokka.
+    """Labyrinttien ja niihin sovellettavien algoritmien visualisointinäkymästä vastaava vastaava luokka.
     """
 
     def __init__(self, screen):
@@ -43,8 +41,7 @@ class Labyrinth:
         return labyrinth
 
     def draw_labyrinth(self):
-        """Alustaa näytön, jossa algoritmit visualisoidaan. Funktio tekee otsikot ja piirtää
-        labyrintit.
+        """Alustaa labyrintit, jossa algoritmit visualisoidaan ja kirjoittaa näytön otsikot ja ohjeet.
         """
         self.screen.fill(WHITE)
         header = self.head_font.render("Dead-end filling", True, SALMON)
@@ -77,12 +74,13 @@ class Labyrinth:
         pygame.display.flip()
 
     def update_labyrinth(self, update_type, x, y):
-        """Päivittää labyrintteja algoritmien edetessä askel askeleelta.
+        """Kyseistä funktiota kutsutaan algoritmien koodissa ja se päivittää labyrintteja
+        algoritmien edetessä askel askeleelta.
 
         Args:
             update_type (str): Algoritmin vaihe, joka halutaan päivittää labyrinttiin.
-            x (int): Ruudun, joka halutaan päivittää, leveyskordinaatti.
-            y (int: Ruudun, joka halutaan päivittää, korkeuskordinaatti.
+            x (int): Päivitettävän ruudun leveyskordinaatti.
+            y (int: Päivitettävän ruudun korkeuskordinaatti.
         """
         if update_type == "deadend":
             pygame.draw.rect(self.screen_def, SALMON, (

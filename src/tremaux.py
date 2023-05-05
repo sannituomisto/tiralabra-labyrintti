@@ -1,6 +1,3 @@
-"""Tremauxin algoritmista vastaava moduuli.
-
-    """
 import sys
 import time
 from random import randint

@@ -1,11 +1,9 @@
-"""Moduuli, joka vastaa pygame ikkunan tapahtumista algoritmien lopetettua.
-    """
 import sys
 import pygame
 
 
 def handle_event(event):
-    """Käsittelee algoritminäkymän tapahtumat, kun tremauxin algoritmi on päässyt loppuun.
+    """Käsittelee algoritminäkymän tapahtumat, jos tremauxin algoritmi annetaan suorittaa loppuun asti.
     Args:
         event (pygame event): Pygame tapahtuma
     """

@@ -1,5 +1,3 @@
-"""Valikkonäkymästä vastaava luokka.
-    """
 import sys
 import pygame
 
