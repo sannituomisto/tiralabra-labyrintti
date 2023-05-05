@@ -2,7 +2,7 @@
 
 [![codecov](https://codecov.io/gh/sannituomisto/tiralabra-labyrintti/branch/main/graph/badge.svg?token=7V5900RYNR)](https://codecov.io/gh/sannituomisto/tiralabra-labyrintti)
 
-Projektissa testataan algoritmien toimintaa eli käytännössä `DeadEndFilling` ja `Tremaux` luokkia. Käyttöliittymä ja algoritmien visualisointi on jätetty testien ulkopuolelle.
+Projektissa testataan algoritmien toimintaa eli käytännössä `DeadEndFilling` ja `Tremaux` luokkia. Käyttöliittymä ja algoritmien visualisointi on jätetty testien ulkopuolelle. Testaus toteutetaan unittesteillä.
 
 ### Dead-end Filling algoritmin testaus
 Testauksessa käytetään käsin tehtyjä labyrintteja, joista on etsitty käsin umpikujat, umpikujista lähtevät polut sekä tehty käsin ratkaistu labyrintti.
