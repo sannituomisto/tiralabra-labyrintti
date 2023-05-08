@@ -82,7 +82,7 @@ class TestDeadEndFilling(unittest.TestCase):
         self.assertEqual(sorted(dead_end_paths), sorted(result))
 
     def test_solved_labyrinth_is_correct(self):
-        result = self.DeF.start_dead_end_filling()
+        result = self.DeF.dead_end_filling()
         self.assertEqual(result, (True, self.solved_labyrinth))
 
     def test_do_not_find_dead_ends_if_not_dead_ends(self):
@@ -90,9 +90,9 @@ class TestDeadEndFilling(unittest.TestCase):
         self.assertEqual(len(dead_ends), 0)
 
     def test_labyrinth_do_not_change_if_no_dead_ends(self):
-        result = self.DeF2.start_dead_end_filling()
+        result = self.DeF2.dead_end_filling()
         self.assertEqual(result, (None, self.labyrinth2))
 
     def test_if_not_solution(self):
-        result = self.DeF3.start_dead_end_filling()
+        result = self.DeF3.dead_end_filling()
         self.assertEqual(result, (True, self.solved_labyrinth3))
