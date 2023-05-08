@@ -44,7 +44,7 @@ class Tremaux:
                             pygame.quit()
                             sys.exit()
                         elif event.key == pygame.K_m:
-                            return False
+                            return False, None
             block = stack[-1]
             self.labyrinth_class.update_labyrinth(
                 "visited_once", block[1], block[0])
