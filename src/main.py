@@ -48,7 +48,7 @@ while True:
                     state = "MENU"
 
     if state == "LABYRINTH":
-        dead_end_filling_state = dead_end_filling_alg.start_dead_end_filling()[
+        dead_end_filling_state = dead_end_filling_alg.dead_end_filling()[
             0]
         if not dead_end_filling_state:
             state = "MENU"

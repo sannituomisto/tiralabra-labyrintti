@@ -15,7 +15,7 @@ class Menu:
     def __init__(self, screen):
         """
         Args:
-            screen (pygame display): Pygameikkuna
+            screen (pygame display): Pygameikkuna näyttö
         """
         self.screen = screen
         self.laby_font = pygame.font.SysFont('Verdana', 30)
@@ -46,7 +46,14 @@ class Menu:
                 pygame.draw.rect(self.screen, ROSEBROWN, text_rect, 3)
 
     def handle_event(self, event):
-        """Käsittelee valikkonäkymän tapahtumat."""
+        """Käsittelee valikkonäkymän pygame tapahtumat.
+
+        Args:
+            event (pygame event): Pygameikkunan tapahtuma
+
+        Returns:
+            int: Käyttäjän valitseman labyrintin numero.
+        """
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
@@ -62,4 +69,3 @@ class Menu:
                     self.selected_labyrinth + 1) % len(self.labyrinths)
             elif event.key == pygame.K_RETURN:
                 return self.selected_labyrinth
-        return None
