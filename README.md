@@ -3,6 +3,7 @@
 ## Dokumentit
 - [Määrittelydokumentti](https://github.com/sannituomisto/tiralabra-labyrintti/blob/main/dokumentit/määrittelydokumentti.md)
 - [Testausdokumentti](https://github.com/sannituomisto/tiralabra-labyrintti/blob/main/dokumentit/testausdokumentti.md)
+- [Toteutusdokumentti](https://github.com/sannituomisto/tiralabra-labyrintti/blob/main/dokumentit/toteutusdokumentti.md)
 
 ## Viikkoraportit
 - [Viikkoraportti 1](https://github.com/sannituomisto/tiralabra-labyrintti/blob/main/dokumentit/viikkoraportti1.md)
