@@ -73,6 +73,8 @@ class Tremaux:
                 stack.pop()
                 if solved_path:
                     solved_path.pop()
+        self.labyrinth_class.update_labyrinth(
+                    "no_solution_tre")
         return True, solved_path
 
     def start_and_end_block(self):

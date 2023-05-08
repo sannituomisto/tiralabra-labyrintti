@@ -25,6 +25,7 @@ class Labyrinth:
             (self.screen_width//2, 100, self.screen_width//2, self.screen_height-100))
         self.ins_font = pygame.font.SysFont('Verdana', 18)
         self.head_font = pygame.font.SysFont('Verdana', 30)
+        self.head2_font = pygame.font.SysFont('Verdana', 40, bold=True)
         self.block_size = 20
         self.labyrinth = None
         self.labyrinth_size = 20
@@ -73,7 +74,7 @@ class Labyrinth:
             x = 0
         pygame.display.flip()
 
-    def update_labyrinth(self, update_type, x, y):
+    def update_labyrinth(self, update_type, x=None, y=None):
         """Kyseistä funktiota kutsutaan algoritmien koodissa ja se päivittää labyrintteja
         algoritmien edetessä askel askeleelta.
 
@@ -94,4 +95,12 @@ class Labyrinth:
         if update_type == "visited_twice":
             pygame.draw.rect(self.screen_tre, RED, (
                 x*self.block_size, y*self.block_size, self.block_size, self.block_size))
+        if update_type == "no_solution_def":
+            header = self.head2_font.render("Ei ratkaisua!", True, ROSEBROWN)
+            header_rect = header.get_rect(topleft=(50, 275))
+            self.screen.blit(header, header_rect)
+        if update_type == "no_solution_tre":
+            header2 = self.head2_font.render("Ei ratkaisua!", True, ROSEBROWN)
+            header_rect2 = header2.get_rect(topleft=(460, 275))
+            self.screen.blit(header2, header_rect2)
         pygame.display.flip()

@@ -78,17 +78,21 @@ class DeadEndFilling:
             neighbour_blocks.append(self.labyrinth[height][width+1])
         return neighbour_blocks
 
-    def find_end_block(self):
-        """Etsii lopetus ruudun.
+    def start_and_end_block(self):
+        """Etsii aloitus- ja lopetusruudun.
 
         Returns:
-            tuple: lopetusruudun koordinaatit.
+            tuple: aloitus- ja lopetusruudun koordinaatit.
         """
+        start = None
         end = None
+        for i in range(0, self.size):
+            if self.labyrinth[0][i] == ".":
+                start = (0, i)
         for j in range(0, self.size):
             if self.labyrinth[self.size-1][j] == ".":
                 end = (self.size-1, j)
-        return end
+        return start, end
 
     def fill_dead_ends(self, dead_ends):
         """Täyttää labyrintin polkuja umpikujista risteykseen asti kunnes vain ratkaisu on jäljellä
@@ -101,7 +105,8 @@ class DeadEndFilling:
         Returns:
             Labyrintin umpikujista risteykseen asti lähtevien polkujen koordinaatit listassa. Palautusarvo on testejä varten.
         """
-        end_block = self.find_end_block()
+        start_block = self.start_and_end_block()[0]
+        end_block = self.start_and_end_block()[1]
         stack = []
         dead_end_paths = []
         for dead_end in dead_ends:
@@ -127,6 +132,9 @@ class DeadEndFilling:
                 time.sleep(0.1)
                 if block == end_block:
                     break
+                if block == start_block:
+                    self.labyrinth_class.update_labyrinth(
+                    "no_solution_def")
                 for move in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
                     new_block = (block[0]+move[0], block[1]+move[1])
                     neighbour_blocks = self.surrounding_blocks(
