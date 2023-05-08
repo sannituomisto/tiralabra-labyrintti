@@ -11,10 +11,9 @@ class DeadEndFilling:
         self.labyrinth = labyrinth
         self.labyrinth_class = labyrinth_class
         self.size = size
-        self.finished = False
         self.is_test = is_test
 
-    def start_dead_end_filling(self):
+    def dead_end_filling(self):
         """Kokoaa algoritmin vaiheet yhteen.
 
         Returns:
@@ -25,7 +24,7 @@ class DeadEndFilling:
         dead_ends = self.find_dead_ends()
         if dead_ends:
             self.fill_dead_ends(dead_ends)
-            return self.finished, self.labyrinth
+            return True, self.labyrinth
         return None, self.labyrinth
 
     def find_dead_ends(self):
@@ -38,6 +37,7 @@ class DeadEndFilling:
         """
         dead_ends = []
         for i in range(1, self.size-1):
+            # Seuraavat 11 riviä ovat pygame ikkunan tapahtumien käsittelyyn tarvittavaa koodia, joka ei liity algoritmiin.
             if not self.is_test:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
@@ -107,6 +107,7 @@ class DeadEndFilling:
         for dead_end in dead_ends:
             stack.append(dead_end)
             while stack:
+                # Seuraavat 11 riviä ovat pygame ikkunan tapahtumien käsittelyyn tarvittavaa koodia, joka ei liity algoritmiin.
                 if not self.is_test:
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
@@ -134,5 +135,4 @@ class DeadEndFilling:
                         continue
                     if self.labyrinth[new_block[0]][new_block[1]] == ".":
                         stack.append(new_block)
-        self.finished = True
         return dead_end_paths
