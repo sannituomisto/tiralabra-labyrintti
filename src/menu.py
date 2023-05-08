@@ -35,7 +35,8 @@ class Menu:
             "Selaa labyrintteja nuolinäppäimillä ja valitse labyrintti painamalla enter.", True, GREEN)
         header_rect = header.get_rect(
             center=(self.screen.get_width() // 2, 50))
-        instructions_rect = instructions.get_rect(center=(self.screen.get_width() // 2, 95))
+        instructions_rect = instructions.get_rect(
+            center=(self.screen.get_width() // 2, 95))
         self.screen.blit(header, header_rect)
         self.screen.blit(instructions, instructions_rect)
         for i in range(len(self.labyrinths)):

@@ -15,14 +15,13 @@ class Tremaux:
         self.is_test = is_test
 
     def tremaux(self):
-        """Funktio, joka suorittaa Tremauxin algoritmin. 
-        """
         """Tremauxin algoritmista vastaava funktio. Pidetään muistissa vierailtuja ruutuja ja muodostuvaa ratkaisupolkua.
         Edetään polkuja pitkin kunnes tullaan risteykseen, jossa ei olla vierailtu, jolloin arvotaan uusi suunta. Jos törmätään
-        umpikujaan tai risteykseen, jossa on jo vierailtu, lähdetään peruutamaan samaa polkua pitkin takaisin. Jos saavutaan risteykseen,
-        jossa ollaan jo vierailtu mutta polku, jota pitkin saavuttiin risteykseen on jo merkitty kahdesti, täytyy valita risteyksestä uusi reitti, jossa on vierailtu maximissaan
-        kerran mutta valitaan vierailematon polku, jos mahdollista. Funktiossa on myös pygame ikkunan tapahtumien käsittelyyn
-        tarvittavaa koodia, joka ei liity algoritmin toimintaan.
+        umpikujaan tai risteykseen, jossa on jo vierailtu, lähdetään peruutamaan samaa polkua pitkin takaisin. Jos saavutaan
+        risteykseen, jossa ollaan jo vierailtu mutta polku, jota pitkin saavuttiin risteykseen on jo merkitty kahdesti, täytyy
+        valita risteyksestä uusi reitti, jossa on vierailtu maximissaan kerran mutta valitaan vierailematon polku, jos
+        mahdollista. Funktiossa on myös pygame ikkunan tapahtumien käsittelyyn tarvittavaa koodia, joka ei liity algoritmin
+        toimintaan.
 
         Returns:
             Ratkaisupolun kooridaatit listassa. Palautusarvo on testejä varten.

@@ -26,7 +26,7 @@ class Labyrinth:
         self.ins_font = pygame.font.SysFont('Verdana', 18)
         self.head_font = pygame.font.SysFont('Verdana', 30)
         self.block_size = 20
-        self.labyrinth=None
+        self.labyrinth = None
         self.labyrinth_size = 20
 
     def get_labyrinth(self, labyrinth_number):
