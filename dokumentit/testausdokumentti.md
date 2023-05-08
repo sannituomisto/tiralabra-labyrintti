@@ -22,6 +22,7 @@ Testauksessa käytetään käsin tehtyjä labyrintteja, joista on etsitty käsin
 
 ### Yksikkötestauksen ja kattavuusraportin tekeminen
 Yksikkötestit voi suorittaa komennolla `poetry run coverage run --branch -m pytest src`, jonka jälkeen testikattavuusraportin saa suorittamalla komento `poetry run coverage html`. Testikattavuusraporttia voi lukea selaimessa avaamalla hakemiston htmlcov/index.html. \
+Vaihtoehtoisesti kattavuusraportin voi tulostaa suoraan komentoriville komennolla `poetry run coverage report -m`. \
 Projektin koodikattavuutta voi myös tarkastella Codecovin avulla painamalla dokumentin alussa olevaa Codecov-badgea.
 
 ### Yksikkötestauksen kattavuusraportti
