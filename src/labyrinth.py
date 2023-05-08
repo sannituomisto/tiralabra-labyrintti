@@ -23,9 +23,6 @@ class Labyrinth:
             (0, 100, self.screen_width//2, self.screen_height-100))
         self.screen_tre = self.screen.subsurface(
             (self.screen_width//2, 100, self.screen_width//2, self.screen_height-100))
-        self.ins_font = pygame.font.SysFont('Verdana', 18)
-        self.head_font = pygame.font.SysFont('Verdana', 30)
-        self.head2_font = pygame.font.SysFont('Verdana', 40, bold=True)
         self.block_size = 20
         self.labyrinth = None
         self.labyrinth_size = 20
@@ -45,9 +42,11 @@ class Labyrinth:
         """Alustaa labyrintit, jossa algoritmit visualisoidaan ja kirjoittaa näytön otsikot ja ohjeet.
         """
         self.screen.fill(WHITE)
-        header = self.head_font.render("Dead-end filling", True, SALMON)
-        header2 = self.head_font.render("Trémaux", True, SALMON)
-        instructions = self.ins_font.render(
+        head_font = pygame.font.SysFont('Verdana', 30)
+        ins_font = pygame.font.SysFont('Verdana', 18)
+        header = head_font.render("Dead-end filling", True, SALMON)
+        header2 = head_font.render("Trémaux", True, SALMON)
+        instructions = ins_font.render(
             "Palaa valikkoon painamalla m-näppäintä.", True, GREEN)
         header_rect = header.get_rect(topleft=(90, 50))
         header2_rect = header2.get_rect(topleft=(530, 50))
@@ -96,11 +95,13 @@ class Labyrinth:
             pygame.draw.rect(self.screen_tre, RED, (
                 x*self.block_size, y*self.block_size, self.block_size, self.block_size))
         if update_type == "no_solution_def":
-            header = self.head2_font.render("Ei ratkaisua!", True, ROSEBROWN)
+            head2_font = pygame.font.SysFont('Verdana', 40, bold=True)
+            header = head2_font.render("Ei ratkaisua!", True, ROSEBROWN)
             header_rect = header.get_rect(topleft=(50, 275))
             self.screen.blit(header, header_rect)
         if update_type == "no_solution_tre":
-            header2 = self.head2_font.render("Ei ratkaisua!", True, ROSEBROWN)
+            head2_font = pygame.font.SysFont('Verdana', 40, bold=True)
+            header2 = head2_font.render("Ei ratkaisua!", True, ROSEBROWN)
             header_rect2 = header2.get_rect(topleft=(460, 275))
             self.screen.blit(header2, header_rect2)
         pygame.display.flip()
