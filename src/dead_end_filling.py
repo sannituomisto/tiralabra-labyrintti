@@ -14,7 +14,7 @@ class DeadEndFilling:
         self.is_test = is_test
 
     def dead_end_filling(self):
-        """Kokoaa algoritmin vaiheet yhteen.
+        """Kokoaa algoritmin vaiheet yhteen, jotta algoritmi toimii hyvin muun sovelluksen kanssa.
 
         Returns:
             Boolean, list: Palauttaa True, jos algoritmia ei keskeytetty ja lopullisen labyrintin listassa,

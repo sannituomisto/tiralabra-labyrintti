@@ -8,7 +8,7 @@ RED = (139, 0, 0)
 
 
 class Labyrinth:
-    """Labyrinttien ja niihin sovellettavien algoritmien visualisointinäkymästä vastaava vastaava luokka.
+    """Luokka, joka vastaa labyrinttinäkymästä.
     """
 
     def __init__(self, screen):
