@@ -27,7 +27,8 @@ Projektin koodikattavuutta voi myös tarkastella Codecovin avulla painamalla dok
 
 ### Yksikkötestauksen kattavuusraportti
 
-![Screenshot from 2023-05-05 16-32-57](https://user-images.githubusercontent.com/101722915/236471872-27a4bd29-5a63-4aa5-bfad-795199339258.png)
+![Screenshot from 2023-05-14 20-50-32](https://github.com/sannituomisto/tiralabra-labyrintti/assets/101722915/43362f58-8184-4048-a6e7-ab6184bebbca)
+
 
 ***Huom!*** Dead-end filling ja Tremauxin algoritmin koodissa on pygame ikkunan tapahtumien käsittelyyn tarvittavaa koodia, joka ei liity algoritmin toimintaan. Tätä osaa koodista ei testata ja tämä alentaa haaraumakattavuutta.
 
