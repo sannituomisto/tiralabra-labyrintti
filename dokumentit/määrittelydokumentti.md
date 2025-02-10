@@ -1,9 +1,5 @@
 # Määrittelydokumentti
 
-Ohjelmointikieli: Python \
-Opinto-ohjelma: tietojenkäsittelytieteen kandidaatti (TKT) \
-Kieli: suomi
-
 ### Sovelluksen tarkoitus
 Tässä sovelluksessa ratkaisen ongelmaa "Miten löydetään reitti ulos labyrintista?". Tarkoituksena on tehdä sovellus, joka vertailee Dead-end filling- ja Tremauxin algoritmia labyrintin ratkaisemisessa. Vertailun kohteena on siis algoritmien erilaiset toimintaperiaatteet labyrintin ratkaisemisessa. Molemmissa algoritmeissaa käytetään tietorakenteena pinoa, joka toteutetaan listarakenteen avulla.
 
