@@ -1,6 +1,8 @@
 # :game_die: Maze solver
 This project, completed for the Data Structures Lab course, involves the implementation and visualization of two different algorithms for solving mazes, using Python and the Pygame module. I chose to explore how the Dead-End Filling and Tremaux algorithms solve mazes and evaluate their effectiveness in finding the path out.
 
+#### Below is an example run of the algorithms in one of the mazes.
+
 [An example run of the algorithms in one of the mazes.](https://github.com/user-attachments/assets/c292ff4a-9c9d-47ec-af34-90ad9e90f47f)
 
 
